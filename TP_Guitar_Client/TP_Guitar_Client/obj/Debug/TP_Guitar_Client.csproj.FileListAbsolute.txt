@@ -1,0 +1,10 @@
+C:\Users\joser\Documents\Vinola\TP_Guitar_Client\TP_Guitar_Client\bin\Debug\TP_Guitar_Client.exe.config
+C:\Users\joser\Documents\Vinola\TP_Guitar_Client\TP_Guitar_Client\bin\Debug\TP_Guitar_Client.exe
+C:\Users\joser\Documents\Vinola\TP_Guitar_Client\TP_Guitar_Client\bin\Debug\TP_Guitar_Client.pdb
+C:\Users\joser\Documents\Vinola\TP_Guitar_Client\TP_Guitar_Client\obj\Debug\TP_Guitar_Client.csprojAssemblyReference.cache
+C:\Users\joser\Documents\Vinola\TP_Guitar_Client\TP_Guitar_Client\obj\Debug\TP_Guitar_Client.Commander_Guitar_Form.resources
+C:\Users\joser\Documents\Vinola\TP_Guitar_Client\TP_Guitar_Client\obj\Debug\TP_Guitar_Client.Properties.Resources.resources
+C:\Users\joser\Documents\Vinola\TP_Guitar_Client\TP_Guitar_Client\obj\Debug\TP_Guitar_Client.csproj.GenerateResource.cache
+C:\Users\joser\Documents\Vinola\TP_Guitar_Client\TP_Guitar_Client\obj\Debug\TP_Guitar_Client.exe
+C:\Users\joser\Documents\Vinola\TP_Guitar_Client\TP_Guitar_Client\obj\Debug\TP_Guitar_Client.pdb
+C:\Users\joser\Documents\Vinola\TP_Guitar_Client\TP_Guitar_Client\obj\Debug\TP_Guitar_Client.GoodbyeWin.resources
