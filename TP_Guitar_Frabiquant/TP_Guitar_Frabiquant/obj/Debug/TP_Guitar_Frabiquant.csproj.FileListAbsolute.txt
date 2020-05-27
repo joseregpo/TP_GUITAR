@@ -1,0 +1,9 @@
+C:\Users\joser\source\repos\TP_Guitar_Frabiquant\TP_Guitar_Frabiquant\bin\Debug\TP_Guitar_Frabiquant.exe.config
+C:\Users\joser\source\repos\TP_Guitar_Frabiquant\TP_Guitar_Frabiquant\bin\Debug\TP_Guitar_Frabiquant.exe
+C:\Users\joser\source\repos\TP_Guitar_Frabiquant\TP_Guitar_Frabiquant\bin\Debug\TP_Guitar_Frabiquant.pdb
+C:\Users\joser\source\repos\TP_Guitar_Frabiquant\TP_Guitar_Frabiquant\obj\Debug\TP_Guitar_Frabiquant.csprojAssemblyReference.cache
+C:\Users\joser\source\repos\TP_Guitar_Frabiquant\TP_Guitar_Frabiquant\obj\Debug\TP_Guitar_Frabiquant.EditionEntreprise.resources
+C:\Users\joser\source\repos\TP_Guitar_Frabiquant\TP_Guitar_Frabiquant\obj\Debug\TP_Guitar_Frabiquant.Properties.Resources.resources
+C:\Users\joser\source\repos\TP_Guitar_Frabiquant\TP_Guitar_Frabiquant\obj\Debug\TP_Guitar_Frabiquant.csproj.GenerateResource.cache
+C:\Users\joser\source\repos\TP_Guitar_Frabiquant\TP_Guitar_Frabiquant\obj\Debug\TP_Guitar_Frabiquant.exe
+C:\Users\joser\source\repos\TP_Guitar_Frabiquant\TP_Guitar_Frabiquant\obj\Debug\TP_Guitar_Frabiquant.pdb

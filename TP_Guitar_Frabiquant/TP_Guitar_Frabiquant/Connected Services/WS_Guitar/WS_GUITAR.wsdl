@@ -1,0 +1,770 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="NouvelleCommande">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NomClient" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DateCommande" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Montant" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TelephoneClient" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NouvelleCommandeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NouvelleCommandeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommandeGuitar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Nomguitar" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Micro1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Micro2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Micro3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BoisManche" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BoisTouche" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BoisCorps" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NomVibrato" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="idCommande" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CommandeGuitarResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllGuitars">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllGuitarsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllGuitarsResult" type="tns:ArrayOfC_GUITAR" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfC_GUITAR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="C_GUITAR" nillable="true" type="tns:C_GUITAR" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="C_GUITAR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Nomguitar" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Micro1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Micro2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Micro3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BoisManche" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BoisTouche" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BoisCorps" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NomVibrato" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllTypeBois">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllTypeBoisResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllTypeBoisResult" type="tns:ArrayOfC_TYPEBOIS" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfC_TYPEBOIS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="C_TYPEBOIS" nillable="true" type="tns:C_TYPEBOIS" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="C_TYPEBOIS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NomTypeBois" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllTypesMicro">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllTypesMicroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllTypesMicroResult" type="tns:ArrayOfC_MICRO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfC_MICRO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="C_MICRO" nillable="true" type="tns:C_MICRO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="C_MICRO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Contructeur" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllTypesVibrato">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllTypesVibratoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllTypesVibratoResult" type="tns:ArrayOfC_VIBRATO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfC_VIBRATO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="C_VIBRATO" nillable="true" type="tns:C_VIBRATO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="C_VIBRATO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NomVibrato" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllCommandesExistant">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllCommandesExistantResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllCommandesExistantResult" type="tns:ArrayOfC_COMMANDE" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfC_COMMANDE">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="C_COMMANDE" nillable="true" type="tns:C_COMMANDE" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="C_COMMANDE">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="idCommande" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NomClient" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DateCommande" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Montant" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TelephoneClient" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllCommandesFaites">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllCommandesFaitesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllCommandesFaitesResult" type="tns:ArrayOfC_BON_COMMANDE" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfC_BON_COMMANDE">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="C_BON_COMMANDE" nillable="true" type="tns:C_BON_COMMANDE" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="C_BON_COMMANDE">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="NroCommande" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Client" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Telephone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nomguitar" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="M_Pos_1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="M_Pos_2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="M_Pos_3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Bois_Corps" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Bois_Touche" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Bois_Manche" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DateCommande" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Montant" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCommandeByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idCommande" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCommandeByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCommandeByIDResult" type="tns:C_BON_COMMANDE" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLastCommandeID">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetLastCommandeIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLastCommandeIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EraseMicroByConstructeur">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Constructeur" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EraseMicroByConstructeurResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EraseCommandeById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idCommande" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EraseCommandeByIdResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EraseTypeBoisByName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NomTypeBois" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EraseTypeBoisByNameResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="EraseVibratoByName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NomVibrato" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EraseVibratoByNameResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AjoutVibratoByName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NomVibrato" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AjoutVibratoByNameResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AjoutTypeBoisByName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NomTypeBois" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AjoutTypeBoisByNameResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AjoutConstructeurMicroByName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NomConstructeur" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AjoutConstructeurMicroByNameResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="NouvelleCommandeSoapIn">
+    <wsdl:part name="parameters" element="tns:NouvelleCommande" />
+  </wsdl:message>
+  <wsdl:message name="NouvelleCommandeSoapOut">
+    <wsdl:part name="parameters" element="tns:NouvelleCommandeResponse" />
+  </wsdl:message>
+  <wsdl:message name="CommandeGuitarSoapIn">
+    <wsdl:part name="parameters" element="tns:CommandeGuitar" />
+  </wsdl:message>
+  <wsdl:message name="CommandeGuitarSoapOut">
+    <wsdl:part name="parameters" element="tns:CommandeGuitarResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllGuitarsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllGuitars" />
+  </wsdl:message>
+  <wsdl:message name="GetAllGuitarsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllGuitarsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllTypeBoisSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllTypeBois" />
+  </wsdl:message>
+  <wsdl:message name="GetAllTypeBoisSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllTypeBoisResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllTypesMicroSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllTypesMicro" />
+  </wsdl:message>
+  <wsdl:message name="GetAllTypesMicroSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllTypesMicroResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllTypesVibratoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllTypesVibrato" />
+  </wsdl:message>
+  <wsdl:message name="GetAllTypesVibratoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllTypesVibratoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCommandesExistantSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllCommandesExistant" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCommandesExistantSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllCommandesExistantResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCommandesFaitesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllCommandesFaites" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCommandesFaitesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllCommandesFaitesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCommandeByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCommandeByID" />
+  </wsdl:message>
+  <wsdl:message name="GetCommandeByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCommandeByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLastCommandeIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLastCommandeID" />
+  </wsdl:message>
+  <wsdl:message name="GetLastCommandeIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLastCommandeIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="EraseMicroByConstructeurSoapIn">
+    <wsdl:part name="parameters" element="tns:EraseMicroByConstructeur" />
+  </wsdl:message>
+  <wsdl:message name="EraseMicroByConstructeurSoapOut">
+    <wsdl:part name="parameters" element="tns:EraseMicroByConstructeurResponse" />
+  </wsdl:message>
+  <wsdl:message name="EraseCommandeByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:EraseCommandeById" />
+  </wsdl:message>
+  <wsdl:message name="EraseCommandeByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:EraseCommandeByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="EraseTypeBoisByNameSoapIn">
+    <wsdl:part name="parameters" element="tns:EraseTypeBoisByName" />
+  </wsdl:message>
+  <wsdl:message name="EraseTypeBoisByNameSoapOut">
+    <wsdl:part name="parameters" element="tns:EraseTypeBoisByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="EraseVibratoByNameSoapIn">
+    <wsdl:part name="parameters" element="tns:EraseVibratoByName" />
+  </wsdl:message>
+  <wsdl:message name="EraseVibratoByNameSoapOut">
+    <wsdl:part name="parameters" element="tns:EraseVibratoByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="AjoutVibratoByNameSoapIn">
+    <wsdl:part name="parameters" element="tns:AjoutVibratoByName" />
+  </wsdl:message>
+  <wsdl:message name="AjoutVibratoByNameSoapOut">
+    <wsdl:part name="parameters" element="tns:AjoutVibratoByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="AjoutTypeBoisByNameSoapIn">
+    <wsdl:part name="parameters" element="tns:AjoutTypeBoisByName" />
+  </wsdl:message>
+  <wsdl:message name="AjoutTypeBoisByNameSoapOut">
+    <wsdl:part name="parameters" element="tns:AjoutTypeBoisByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="AjoutConstructeurMicroByNameSoapIn">
+    <wsdl:part name="parameters" element="tns:AjoutConstructeurMicroByName" />
+  </wsdl:message>
+  <wsdl:message name="AjoutConstructeurMicroByNameSoapOut">
+    <wsdl:part name="parameters" element="tns:AjoutConstructeurMicroByNameResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WS_GUITARSoap">
+    <wsdl:operation name="NouvelleCommande">
+      <wsdl:input message="tns:NouvelleCommandeSoapIn" />
+      <wsdl:output message="tns:NouvelleCommandeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CommandeGuitar">
+      <wsdl:input message="tns:CommandeGuitarSoapIn" />
+      <wsdl:output message="tns:CommandeGuitarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllGuitars">
+      <wsdl:input message="tns:GetAllGuitarsSoapIn" />
+      <wsdl:output message="tns:GetAllGuitarsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTypeBois">
+      <wsdl:input message="tns:GetAllTypeBoisSoapIn" />
+      <wsdl:output message="tns:GetAllTypeBoisSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTypesMicro">
+      <wsdl:input message="tns:GetAllTypesMicroSoapIn" />
+      <wsdl:output message="tns:GetAllTypesMicroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTypesVibrato">
+      <wsdl:input message="tns:GetAllTypesVibratoSoapIn" />
+      <wsdl:output message="tns:GetAllTypesVibratoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCommandesExistant">
+      <wsdl:input message="tns:GetAllCommandesExistantSoapIn" />
+      <wsdl:output message="tns:GetAllCommandesExistantSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCommandesFaites">
+      <wsdl:input message="tns:GetAllCommandesFaitesSoapIn" />
+      <wsdl:output message="tns:GetAllCommandesFaitesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCommandeByID">
+      <wsdl:input message="tns:GetCommandeByIDSoapIn" />
+      <wsdl:output message="tns:GetCommandeByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLastCommandeID">
+      <wsdl:input message="tns:GetLastCommandeIDSoapIn" />
+      <wsdl:output message="tns:GetLastCommandeIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EraseMicroByConstructeur">
+      <wsdl:input message="tns:EraseMicroByConstructeurSoapIn" />
+      <wsdl:output message="tns:EraseMicroByConstructeurSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EraseCommandeById">
+      <wsdl:input message="tns:EraseCommandeByIdSoapIn" />
+      <wsdl:output message="tns:EraseCommandeByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EraseTypeBoisByName">
+      <wsdl:input message="tns:EraseTypeBoisByNameSoapIn" />
+      <wsdl:output message="tns:EraseTypeBoisByNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EraseVibratoByName">
+      <wsdl:input message="tns:EraseVibratoByNameSoapIn" />
+      <wsdl:output message="tns:EraseVibratoByNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AjoutVibratoByName">
+      <wsdl:input message="tns:AjoutVibratoByNameSoapIn" />
+      <wsdl:output message="tns:AjoutVibratoByNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AjoutTypeBoisByName">
+      <wsdl:input message="tns:AjoutTypeBoisByNameSoapIn" />
+      <wsdl:output message="tns:AjoutTypeBoisByNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AjoutConstructeurMicroByName">
+      <wsdl:input message="tns:AjoutConstructeurMicroByNameSoapIn" />
+      <wsdl:output message="tns:AjoutConstructeurMicroByNameSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WS_GUITARSoap" type="tns:WS_GUITARSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="NouvelleCommande">
+      <soap:operation soapAction="http://tempuri.org/NouvelleCommande" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommandeGuitar">
+      <soap:operation soapAction="http://tempuri.org/CommandeGuitar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllGuitars">
+      <soap:operation soapAction="http://tempuri.org/GetAllGuitars" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTypeBois">
+      <soap:operation soapAction="http://tempuri.org/GetAllTypeBois" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTypesMicro">
+      <soap:operation soapAction="http://tempuri.org/GetAllTypesMicro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTypesVibrato">
+      <soap:operation soapAction="http://tempuri.org/GetAllTypesVibrato" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCommandesExistant">
+      <soap:operation soapAction="http://tempuri.org/GetAllCommandesExistant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCommandesFaites">
+      <soap:operation soapAction="http://tempuri.org/GetAllCommandesFaites" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCommandeByID">
+      <soap:operation soapAction="http://tempuri.org/GetCommandeByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastCommandeID">
+      <soap:operation soapAction="http://tempuri.org/GetLastCommandeID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EraseMicroByConstructeur">
+      <soap:operation soapAction="http://tempuri.org/EraseMicroByConstructeur" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EraseCommandeById">
+      <soap:operation soapAction="http://tempuri.org/EraseCommandeById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EraseTypeBoisByName">
+      <soap:operation soapAction="http://tempuri.org/EraseTypeBoisByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EraseVibratoByName">
+      <soap:operation soapAction="http://tempuri.org/EraseVibratoByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AjoutVibratoByName">
+      <soap:operation soapAction="http://tempuri.org/AjoutVibratoByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AjoutTypeBoisByName">
+      <soap:operation soapAction="http://tempuri.org/AjoutTypeBoisByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AjoutConstructeurMicroByName">
+      <soap:operation soapAction="http://tempuri.org/AjoutConstructeurMicroByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WS_GUITARSoap12" type="tns:WS_GUITARSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="NouvelleCommande">
+      <soap12:operation soapAction="http://tempuri.org/NouvelleCommande" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CommandeGuitar">
+      <soap12:operation soapAction="http://tempuri.org/CommandeGuitar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllGuitars">
+      <soap12:operation soapAction="http://tempuri.org/GetAllGuitars" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTypeBois">
+      <soap12:operation soapAction="http://tempuri.org/GetAllTypeBois" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTypesMicro">
+      <soap12:operation soapAction="http://tempuri.org/GetAllTypesMicro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTypesVibrato">
+      <soap12:operation soapAction="http://tempuri.org/GetAllTypesVibrato" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCommandesExistant">
+      <soap12:operation soapAction="http://tempuri.org/GetAllCommandesExistant" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCommandesFaites">
+      <soap12:operation soapAction="http://tempuri.org/GetAllCommandesFaites" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCommandeByID">
+      <soap12:operation soapAction="http://tempuri.org/GetCommandeByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLastCommandeID">
+      <soap12:operation soapAction="http://tempuri.org/GetLastCommandeID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EraseMicroByConstructeur">
+      <soap12:operation soapAction="http://tempuri.org/EraseMicroByConstructeur" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EraseCommandeById">
+      <soap12:operation soapAction="http://tempuri.org/EraseCommandeById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EraseTypeBoisByName">
+      <soap12:operation soapAction="http://tempuri.org/EraseTypeBoisByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EraseVibratoByName">
+      <soap12:operation soapAction="http://tempuri.org/EraseVibratoByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AjoutVibratoByName">
+      <soap12:operation soapAction="http://tempuri.org/AjoutVibratoByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AjoutTypeBoisByName">
+      <soap12:operation soapAction="http://tempuri.org/AjoutTypeBoisByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AjoutConstructeurMicroByName">
+      <soap12:operation soapAction="http://tempuri.org/AjoutConstructeurMicroByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS_GUITAR">
+    <wsdl:port name="WS_GUITARSoap" binding="tns:WS_GUITARSoap">
+      <soap:address location="http://localhost:50178/WS_GUITAR.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WS_GUITARSoap12" binding="tns:WS_GUITARSoap12">
+      <soap12:address location="http://localhost:50178/WS_GUITAR.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
